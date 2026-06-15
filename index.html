@@ -1,134 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakvan - Gujarati Recipe App</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8ef;
-      color: #3b2414;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobalt Technology</title>
 
-    header {
-      padding: 40px 20px 20px;
-    }
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106560063698039"
+        crossorigin="anonymous"></script>
 
-    .logo {
-      font-size: 48px;
-      font-weight: bold;
-      color: #7b3f12;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .hero {
-      padding: 20px;
-    }
+        body {
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            background: #f7f9fc;
+            color: #1f2937;
+        }
 
-    .card {
-      max-width: 520px;
-      margin: auto;
-      background: white;
-      border-radius: 28px;
-      padding: 30px 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
 
-    h1 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
+        header h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
 
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #5f4b3b;
-    }
+        header p {
+            font-size: 20px;
+            opacity: .9;
+        }
 
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 16px 28px;
-      background: #34a853;
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-    .ad-box {
-      margin: 24px auto;
-      max-width: 728px;
-      min-height: 90px;
-      background: #f1e4d5;
-      border: 2px dashed #c9ad94;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8a6a50;
-      font-size: 16px;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
 
-    footer {
-      margin-top: 40px;
-      padding: 24px;
-      font-size: 14px;
-      color: #7a6655;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-    footer a {
-      color: #7b3f12;
-      text-decoration: none;
-    }
-  </style>
+        .card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .pakvan {
+            background: linear-gradient(135deg, #ff7b00, #ffb703);
+        }
+
+        .upcoming {
+            background: linear-gradient(135deg, #4285F4, #58c7ff);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            margin-bottom: 12px;
+            font-size: 28px;
+        }
+
+        .card-body p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        .ad-section {
+            margin: 50px 0;
+        }
+
+        .ad-placeholder {
+            background: white;
+            border-radius: 20px;
+            min-height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #d1d5db;
+            color: #6b7280;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 60px;
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: #58c7ff;
+            text-decoration: none;
+        }
+
+        @media(max-width:768px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">પકવાન</div>
-    <p>The Gujarati Recipe Book</p>
-  </header>
+    <header>
+        <h1>Cobalt Technology</h1>
+        <p>Building Modern Mobile Applications & Digital Solutions</p>
+    </header>
 
-  <div class="ad-box">Banner Ad Space</div>
+    <div class="container">
 
-  <section class="hero">
-    <div class="card">
-      <h1>Download Pakvan App</h1>
-      <p>
-        Discover tasty Gujarati recipes, snacks, sweets, daily food ideas,
-        and traditional dishes in one simple app.
-      </p>
+        <div class="ad-section">
 
-      <a class="btn" href="https://play.google.com/store/apps/details?id=com.pakvan.guj" target="_blank">
-        Download on Google Play
-      </a>
+            <!-- Replace with AdSense Ad Unit -->
+            <div class="ad-placeholder">
+                Google AdSense Banner
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Our Applications</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-header pakvan">
+                    Pakvan
+                </div>
+
+                <div class="card-body">
+                    <h3>Pakvan</h3>
+
+                    <p>
+                        Discover hundreds of Gujarati recipes including snacks,
+                        sweets, vegetables, traditional dishes and much more.
+                        Designed specifically for Gujarati food lovers.
+                    </p>
+
+                    <a class="btn"
+                        href="https://play.google.com/store/apps/details?id=com.pakvan.guj"
+                        target="_blank">
+                        Download App
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header upcoming">
+                    Coming Soon
+                </div>
+
+                <div class="card-body">
+                    <h3>Upcoming Apps</h3>
+
+                    <p>
+                        Exciting new mobile applications are currently under
+                        development by Cobalt Technology.
+                        Stay tuned for innovative solutions focused on productivity,
+                        family safety, business tools and everyday convenience.
+                    </p>
+
+                    <a class="btn" href="#">
+                        Coming Soon
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ad-section">
+
+            <!-- Replace with AdSense Ad Unit -->
+            <div class="ad-placeholder">
+                Google AdSense Banner
+            </div>
+
+        </div>
+
+        <div class="ad-section">
+
+            <!-- Replace with AdSense Ad Unit -->
+            <div class="ad-placeholder">
+                Google AdSense Banner
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <div class="ad-box">Banner Ad Space</div>
+    <footer>
+        <p>
+            © 2026 Cobalt Technology
+        </p>
 
-  <section class="hero">
-    <div class="card">
-      <h1>ગુજરાતી રેસીપી એપ</h1>
-      <p>
-        નાસ્તા, મીઠાઈ, શાક, રોટલી, ચટણી અને ઘણી બધી ગુજરાતી વાનગીઓ સરળ રીતે શીખો.
-      </p>
-    </div>
-  </section>
+        <br>
 
-  <div class="ad-box">Banner Ad Space</div>
-
-  <footer>
-    <p>
-      <a href="/app-ads.txt">app-ads.txt</a> |
-      <a href="/pakvan-privacy/">Privacy Policy</a>
-    </p>
-    <p>© 2026 Pakvan</p>
-  </footer>
+        <p>
+            <a href="/pakvan-privacy/">
+                Privacy Policy
+            </a>
+            |
+            <a href="/app-ads.txt">
+                app-ads.txt
+            </a>
+        </p>
+    </footer>
 
 </body>
+
 </html>
