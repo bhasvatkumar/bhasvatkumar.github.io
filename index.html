@@ -1,269 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cobalt Technology</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cobalt Technology</title>
 
-    <!-- Google AdSense -->
-    <script async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106560063698039"
-        crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106560063698039"
+    crossorigin="anonymous"></script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Inter, Segoe UI, Arial, sans-serif;
-            background: #f7f9fc;
-            color: #1f2937;
-        }
+    body {
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+    }
 
-        header {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
+    .hero {
+      background: radial-gradient(circle at top left, #38bdf8, transparent 30%),
+                  linear-gradient(135deg, #0f172a, #1e293b 55%, #2563eb);
+      color: white;
+      padding: 34px 20px 42px;
+      text-align: center;
+    }
 
-        header h1 {
-            font-size: 52px;
-            margin-bottom: 10px;
-        }
+    .brand {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
 
-        header p {
-            font-size: 20px;
-            opacity: .9;
-        }
+    .tagline {
+      font-size: 17px;
+      opacity: .9;
+      max-width: 620px;
+      margin: auto;
+      line-height: 1.5;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+    .hero-actions {
+      margin-top: 22px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 14px;
+      background: #22c55e;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 10px 22px rgba(34, 197, 94, .28);
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
+    .btn.secondary {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      margin-left: 8px;
+      box-shadow: none;
+    }
 
-        .card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-            transition: .3s;
-        }
+    .container {
+      max-width: 1080px;
+      margin: auto;
+      padding: 26px 18px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    .ad-box {
+      margin: 18px 0;
+      min-height: 90px;
+      background: white;
+      border: 1px dashed #cbd5e1;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: #64748b;
+      font-size: 14px;
+    }
 
-        .card-header {
-            height: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-        }
+    .section-title {
+      font-size: 28px;
+      margin: 20px 0 18px;
+      text-align: center;
+    }
 
-        .pakvan {
-            background: linear-gradient(135deg, #ff7b00, #ffb703);
-        }
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
 
-        .upcoming {
-            background: linear-gradient(135deg, #4285F4, #58c7ff);
-        }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, .08);
+    }
 
-        .card-body {
-            padding: 25px;
-        }
+    .app-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
 
-        .card-body h3 {
-            margin-bottom: 12px;
-            font-size: 28px;
-        }
+    .icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      font-weight: 800;
+      color: white;
+    }
 
-        .card-body p {
-            color: #6b7280;
-            line-height: 1.7;
-        }
+    .pakvan-icon {
+      background: linear-gradient(135deg, #f97316, #facc15);
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background: #16a34a;
-            color: white;
-            text-decoration: none;
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-        }
+    .future-icon {
+      background: linear-gradient(135deg, #2563eb, #58c7ff);
+    }
 
-        .btn:hover {
-            opacity: .9;
-        }
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
 
-        .ad-section {
-            margin: 50px 0;
-        }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: #2563eb;
+      font-weight: 700;
+    }
 
-        .ad-placeholder {
-            background: white;
-            border-radius: 20px;
-            min-height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px dashed #d1d5db;
-            color: #6b7280;
-            font-size: 18px;
-        }
+    .card p {
+      color: #5b6475;
+      line-height: 1.6;
+      margin: 14px 0;
+    }
 
-        footer {
-            margin-top: 60px;
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
 
-        footer a {
-            color: #58c7ff;
-            text-decoration: none;
-        }
+    .features span {
+      background: #f1f5f9;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #334155;
+    }
 
-        @media(max-width:768px) {
-            header h1 {
-                font-size: 38px;
-            }
+    .info {
+      margin-top: 24px;
+      background: #0f172a;
+      color: white;
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
 
-            .section-title {
-                font-size: 26px;
-            }
-        }
-    </style>
+    .info-box {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .info-box h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .info-box p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        font-size: 28px;
+      }
+
+      .btn {
+        display: block;
+        margin: 10px auto 0;
+        max-width: 260px;
+      }
+
+      .btn.secondary {
+        margin-left: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Cobalt Technology</h1>
-        <p>Building Modern Mobile Applications & Digital Solutions</p>
-    </header>
+  <section class="hero">
+    <div class="brand">Cobalt Technology</div>
+    <p class="tagline">
+      Building simple, modern and useful mobile applications for everyday users.
+    </p>
 
-    <div class="container">
+    <div class="hero-actions">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.pakvan.guj" target="_blank">
+        Download Pakvan
+      </a>
+      <a class="btn secondary" href="#apps">
+        View Apps
+      </a>
+    </div>
+  </section>
 
-        <div class="ad-section">
+  <main class="container">
 
-            <!-- Replace with AdSense Ad Unit -->
-            <div class="ad-placeholder">
-                Google AdSense Banner
-            </div>
+    <div class="ad-box">
+      AdSense Auto Ads area
+    </div>
 
+    <h2 class="section-title" id="apps">Our Apps</h2>
+
+    <div class="apps">
+
+      <div class="card">
+        <div class="app-top">
+          <div class="icon pakvan-icon">પ</div>
+          <div>
+            <h3>Pakvan</h3>
+            <span class="badge">Available on Google Play</span>
+          </div>
         </div>
 
-        <h2 class="section-title">Our Applications</h2>
+        <p>
+          Pakvan is a Gujarati recipe app with snacks, sweets, traditional food,
+          daily dishes and easy cooking ideas.
+        </p>
 
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-header pakvan">
-                    Pakvan
-                </div>
-
-                <div class="card-body">
-                    <h3>Pakvan</h3>
-
-                    <p>
-                        Discover hundreds of Gujarati recipes including snacks,
-                        sweets, vegetables, traditional dishes and much more.
-                        Designed specifically for Gujarati food lovers.
-                    </p>
-
-                    <a class="btn"
-                        href="https://play.google.com/store/apps/details?id=com.pakvan.guj"
-                        target="_blank">
-                        Download App
-                    </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header upcoming">
-                    Coming Soon
-                </div>
-
-                <div class="card-body">
-                    <h3>Upcoming Apps</h3>
-
-                    <p>
-                        Exciting new mobile applications are currently under
-                        development by Cobalt Technology.
-                        Stay tuned for innovative solutions focused on productivity,
-                        family safety, business tools and everyday convenience.
-                    </p>
-
-                    <a class="btn" href="#">
-                        Coming Soon
-                    </a>
-                </div>
-            </div>
-
+        <div class="features">
+          <span>Gujarati Recipes</span>
+          <span>Snacks</span>
+          <span>Sweets</span>
+          <span>Checklist</span>
         </div>
 
-        <div class="ad-section">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.pakvan.guj" target="_blank">
+          Download App
+        </a>
+      </div>
 
-            <!-- Replace with AdSense Ad Unit -->
-            <div class="ad-placeholder">
-                Google AdSense Banner
-            </div>
-
+      <div class="card">
+        <div class="app-top">
+          <div class="icon future-icon">360</div>
+          <div>
+            <h3>Upcoming App</h3>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
 
-        <div class="ad-section">
+        <p>
+          We are working on new mobile applications focused on family safety,
+          productivity, business tools and daily convenience.
+        </p>
 
-            <!-- Replace with AdSense Ad Unit -->
-            <div class="ad-placeholder">
-                Google AdSense Banner
-            </div>
-
+        <div class="features">
+          <span>Family Safety</span>
+          <span>Location Sharing</span>
+          <span>Productivity</span>
+          <span>Modern UI</span>
         </div>
+
+        <a class="btn secondary" href="#">
+          Coming Soon
+        </a>
+      </div>
 
     </div>
 
-    <footer>
-        <p>
-            © 2026 Cobalt Technology
-        </p>
+    <div class="ad-box">
+      AdSense Auto Ads area
+    </div>
 
-        <br>
+    <section class="info">
+      <div class="info-box">
+        <h4>Modern Design</h4>
+        <p>Clean and user-friendly apps with simple navigation.</p>
+      </div>
 
-        <p>
-            <a href="/pakvan-privacy/">
-                Privacy Policy
-            </a>
-            |
-            <a href="/app-ads.txt">
-                app-ads.txt
-            </a>
-        </p>
-    </footer>
+      <div class="info-box">
+        <h4>Mobile First</h4>
+        <p>Built for Android users with smooth and fast experience.</p>
+      </div>
+
+      <div class="info-box">
+        <h4>Useful Products</h4>
+        <p>Focused on real-world problems and daily needs.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Cobalt Technology</p>
+    <p>
+      <a href="/pakvan-privacy/">Privacy Policy</a>
+      |
+      <a href="/app-ads.txt">app-ads.txt</a>
+    </p>
+  </footer>
 
 </body>
-
 </html>
