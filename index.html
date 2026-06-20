@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,18 +18,25 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Inter, Segoe UI, Arial, sans-serif;
       background: #f7f9fc;
       color: #172033;
+      overflow-x: hidden;
     }
 
     .hero {
       background: radial-gradient(circle at top left, #38bdf8, transparent 30%),
                   linear-gradient(135deg, #0f172a, #1e293b 55%, #2563eb);
       color: white;
-      padding: 34px 20px 42px;
+      padding: 42px 20px 56px;
       text-align: center;
+      will-change: transform;
+      overflow: hidden;
     }
 
     .brand {
@@ -89,12 +97,14 @@
       font-size: 28px;
       margin: 20px 0 18px;
       text-align: center;
+      will-change: transform, opacity;
     }
 
     .apps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 18px;
+      perspective: 1200px;
     }
 
     .card {
@@ -103,6 +113,13 @@
       padding: 22px;
       border: 1px solid #e5e7eb;
       box-shadow: 0 14px 34px rgba(15, 23, 42, .08);
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      transition: 0.25s ease;
     }
 
     .app-top {
@@ -176,6 +193,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 14px;
+      perspective: 1000px;
     }
 
     .info-box {
@@ -183,6 +201,7 @@
       border: 1px solid rgba(255,255,255,.1);
       border-radius: 18px;
       padding: 18px;
+      will-change: transform, opacity;
     }
 
     .info-box h4 {
@@ -222,6 +241,14 @@
 
       .btn.secondary {
         margin-left: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
       }
     }
   </style>
@@ -334,10 +361,93 @@
 
   <footer>
     <p>© 2026 Cobalt Technology</p>
-   <p>
-  <a href="/pakvan-privacy.html">Privacy Policy</a>
-</p>
+    <p>
+      <a href="/pakvan-privacy.html">Privacy Policy</a>
+    </p>
   </footer>
+
+  <!-- Scroll Motion Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".brand", {
+      y: 60,
+      opacity: 0,
+      scale: 0.9,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.from(".tagline, .hero-actions", {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      delay: 0.25,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+
+    gsap.to(".hero", {
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      },
+      scale: 1.08,
+      y: -60
+    });
+
+    gsap.from(".section-title", {
+      scrollTrigger: {
+        trigger: ".section-title",
+        start: "top 85%",
+        end: "bottom 40%",
+        scrub: true
+      },
+      y: 70,
+      opacity: 0,
+      scale: 0.9
+    });
+
+    gsap.utils.toArray(".card").forEach((card, index) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          end: "bottom 35%",
+          scrub: true
+        },
+        y: 130,
+        opacity: 0,
+        scale: 0.85,
+        rotateX: 18,
+        rotateY: index % 2 === 0 ? -14 : 14,
+        ease: "none"
+      });
+    });
+
+    gsap.utils.toArray(".info-box").forEach((box, index) => {
+      gsap.from(box, {
+        scrollTrigger: {
+          trigger: box,
+          start: "top 90%",
+          end: "bottom 40%",
+          scrub: true
+        },
+        y: 90,
+        opacity: 0,
+        scale: 0.85,
+        rotateX: 15,
+        rotateY: index === 1 ? 0 : index === 0 ? -10 : 10,
+        ease: "none"
+      });
+    });
+  </script>
 
 </body>
 </html>
+```
